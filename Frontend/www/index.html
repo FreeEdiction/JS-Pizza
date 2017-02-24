@@ -37,231 +37,24 @@
 
 <div class="header">
     <h3 class="headerAllPizzas">Усі піци</h3>
-    <span class="amountOfPizzas">8</span>
+    <span class="amountOfPizzas amOfP">0</span>
 </div>
 
 
 <div class=" kindOfPizza col-md-7 col-sm-6 col-xs-6">
-    <button class="btn btn-default fontSize marg">Усі</button>
-    <button class="btn btn-default fontSize marg">М'ясні</button>
-    <button class="btn btn-default fontSize marg">З ананасами</button>
-    <button class="btn btn-default fontSize marg">З грибами</button>
-    <button class="btn btn-default fontSize marg">З морепродуктами</button>
-    <button class="btn btn-default fontSize marg">Вега</button>
+    <button  class="btn btn-default fontSize marg all">Усі</button>
+    <button id="М’ясна" class="btn btn-default fontSize marg meat">М'ясні</button>
+    <button id="" class="btn btn-default fontSize marg ananas">З ананасами</button>
+    <button class="btn btn-default fontSize marg mushrooms">З грибами</button>
+    <button id="Морська піца" class="btn btn-default fontSize marg ocean">З морепродуктами</button>
+    <button id="Вега піца" class="btn btn-default fontSize marg vega">Вега</button>
 </div>
 
 
-<div id="cart"></div>
+<!--<div id="cart"></div>-->
 <div class="container col-md-8 col-sm-6 col-xs-5 col-lg-8">
-    <div class="row" id="pizza_list">
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
+        <div class="row" id="pizza_list">
 
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-2">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 ">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>BBQ(Мала)</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <div class="diamAndWeight1">
-                        <img class="" src="assets/images/size-icon.svg">
-                        <div class="diam1">30</div>
-                        <img class="" src="assets/images/weight.svg">
-                        <div class="diam1">400</div>
-                    </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default marg1">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
 
     </div>
     <div class="bottomPanel col-md-12 col-sm-12 col-xs-12">
@@ -272,94 +65,19 @@
 
 
 
-<div class="col-sm-5 leftPanel col-md-4 col-xs-6">
+<div  class="col-sm-5 leftPanel col-md-4 col-xs-6">
 <div class="zamovlennya">
     <span class="zamovlWord">Замовлення</span>
-    <span class="amountOfPizzas">3</span>
+    <span class="amountOfPizzas counterOfZam">0</span>
     <button class="deleteZam btn btn-default">Очистити замовлення</button>
 </div>
-    <div class="overfloW ">
-<div class="pizzaZam">
-
-    <div class="namePizza">BBQ(Мала)</div>
-    <div class="diamAndWeight">
-        <img class="imgDiam styleOfBlock marg" src="assets/images/size-icon.svg">
-        <div class="diam styleOfBlock">30</div>
-        <img class="imgWeight styleOfBlock marg" src="assets/images/weight.svg">
-        <div class="weight styleOfBlock">400</div>
-        </div>
-    <img class="halfPizza" src="assets/images/pizza_1.jpg">
-    <div class="changeAmount">
-        <span class="price marg ">556</span>
-        <button class="button minus marg ">-</button>
-        <span class="amountOfPizzas marg">4</span>
-        <button class="button plus marg">+</button>
-        <button class="button delete marg">x</button>
-    </div>
-</div>
-
-
-    <div class="pizzaZam">
-
-        <div class="namePizza">BBQ(Мала)</div>
-        <div class="diamAndWeight">
-            <img class="imgDiam styleOfBlock marg" src="assets/images/size-icon.svg">
-            <div class="diam styleOfBlock">30</div>
-            <img class="imgWeight styleOfBlock marg" src="assets/images/weight.svg">
-            <div class="weight styleOfBlock">400</div>
-        </div>
-        <img class="halfPizza" src="assets/images/pizza_1.jpg">
-        <div class="changeAmount">
-            <span class="price marg ">556</span>
-            <button class="button minus marg ">-</button>
-            <span class="amountOfPizzas marg">4</span>
-            <button class="button plus marg">+</button>
-            <button class="button delete marg">x</button>
-        </div>
-    </div>
-    <div class="pizzaZam">
-
-        <div class="namePizza">BBQ(Мала)</div>
-        <div class="diamAndWeight">
-            <img class="imgDiam styleOfBlock marg" src="assets/images/size-icon.svg">
-            <div class="diam styleOfBlock">30</div>
-            <img class="imgWeight styleOfBlock marg" src="assets/images/weight.svg">
-            <div class="weight styleOfBlock">400</div>
-        </div>
-        <img class="halfPizza" src="assets/images/pizza_1.jpg">
-        <div class="changeAmount">
-            <span class="price marg ">556</span>
-            <button class="button minus marg ">-</button>
-            <span class="amountOfPizzas marg">4</span>
-            <button class="button plus marg">+</button>
-            <button class="button delete marg">x</button>
-        </div>
-    </div>
-
-        <div class="pizzaZam">
-
-            <div class="namePizza">BBQ(Мала)</div>
-            <div class="diamAndWeight">
-                <img class="imgDiam styleOfBlock marg" src="assets/images/size-icon.svg">
-                <div class="diam styleOfBlock">30</div>
-                <img class="imgWeight styleOfBlock marg" src="assets/images/weight.svg">
-                <div class="weight styleOfBlock">400</div>
-            </div>
-            <img class="halfPizza" src="assets/images/pizza_1.jpg">
-            <div class="changeAmount">
-                <span class="price marg ">556</span>
-                <button class="button minus marg ">-</button>
-                <span class="amountOfPizzas marg">4</span>
-                <button class="button plus marg">+</button>
-                <button class="button delete marg">x</button>
-            </div>
-        </div>
+    <div id="cart" class="overfloW ">
 
 </div>
 
     <div class="col-md-11 col-sm-11 sum  col-xs-11">
-        <div class="sumWord">Сума замовлення</div>
-        <div class="sumOfBuy">562 grn</div>
+        <div class="sumWord">Сума замовлення:</div>
+        <div class="sumOfBuy">0</div>
 <button class="buttonOrder">Замовити</button>
     </div>
 </div>
@@ -378,7 +96,25 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!--Own JavaScript -->
-<!--<script type="text/javascript"  src="assets/js/main.js"> </script>-->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
 </body>
 </html>
+<!--<div class="pizzaZam">-->
+
+    <!--<div class="namePizza">BBQ(Мала)</div>-->
+    <!--<div class="diamAndWeight">-->
+        <!--<img class="imgDiam styleOfBlock marg" src="assets/images/size-icon.svg">-->
+        <!--<div class="diam styleOfBlock">30</div>-->
+        <!--<img class="imgWeight styleOfBlock marg" src="assets/images/weight.svg">-->
+        <!--<div class="weight styleOfBlock">400</div>-->
+    <!--</div>-->
+    <!--<img class="halfPizza" src="assets/images/pizza_1.jpg">-->
+    <!--<div class="changeAmount">-->
+        <!--<span class="price marg ">556</span>-->
+        <!--<button class="button minus marg ">-</button>-->
+        <!--<span class="amountOfPizzas marg">4</span>-->
+        <!--<button class="button plus marg">+</button>-->
+        <!--<button class="button delete marg">x</button>-->
+    <!--</div>-->
+<!--</div>-->
 
