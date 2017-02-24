@@ -418,21 +418,57 @@ function initialiseMenu() {
 
     $(".meat").click(function () {
         filterPizza("meat");
+        $(".meat").addClass("back");
+        $(".ananas").removeClass("back");
+        $(".ocean").removeClass("back");
+        $(".mushrooms").removeClass("back");
+        $(".vega").removeClass("back");
+        $(".all").removeClass("back");
     });
     $(".ananas").click(function () {
         filterPizza("pineapple");
+        $(".meat").removeClass("back");
+        $(".ananas").addClass("back");
+        $(".ocean").removeClass("back");
+        $(".mushrooms").removeClass("back");
+        $(".vega").removeClass("back");
+        $(".all").removeClass("back");
     });
     $(".ocean").click(function () {
         filterPizza("ocean");
+        $(".meat").removeClass("back");
+        $(".ananas").removeClass("back");
+        $(".ocean").addClass("back");
+        $(".mushrooms").removeClass("back");
+        $(".vega").removeClass("back");
+        $(".all").removeClass("back");
     });
     $(".mushrooms").click(function () {
         filterPizza("mushroom");
+        $(".meat").removeClass("back");
+        $(".ananas").removeClass("back");
+        $(".ocean").removeClass("back");
+        $(".mushrooms").addClass("back");
+        $(".vega").removeClass("back");
+        $(".all").removeClass("back");
     });
     $(".vega").click(function () {
         filterPizza("Вега піца");
+        $(".meat").removeClass("back");
+        $(".ananas").removeClass("back");
+        $(".ocean").removeClass("back");
+        $(".mushrooms").removeClass("back");
+        $(".vega").addClass("back");
+        $(".all").removeClass("back");
     });
     $(".all").click(function () {
         showPizzaList(Pizza_List);
+        $(".meat").removeClass("back");
+        $(".ananas").removeClass("back");
+        $(".ocean").removeClass("back");
+        $(".mushrooms").removeClass("back");
+        $(".vega").removeClass("back");
+        $(".all").addClass("back");
     });
 }
 
