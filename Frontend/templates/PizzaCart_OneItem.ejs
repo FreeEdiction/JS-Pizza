@@ -11,10 +11,22 @@
     <img class="halfPizza" src="<%= pizza.icon %>">
     <div class="changeAmount">
     <span class="price marg "><%=  pizza[size].price %></span>
-    <button class="button minus marg ">-</button>
+        <% if($(".buy").hasClass("none") == false) { %>
+        <button class="button minus marg ">-</button>
+        <% } %>
+        <% if($(".buy").hasClass("none") == true) { %>
+        <span> <b>грн</b></span>
+        <% } %>
     <span class="amountOfPizzas marg"><%= quantity %></span>
-    <button class="button plus marg">+</button>
-    <button class="button delete marg">x</button>
+        <% if($(".buy").hasClass("none") == true) { %>
+        <span> <b>піца</b></span>
+        <% } %>
+        <% if($(".buy").hasClass("none") == false) { %>
+        <button class="button plus marg">+</button>
+        <% } %>
+        <% if($(".buy").hasClass("none") == false) { %>
+        <button class="button delete marg">x</button>
+        <% } %>
     </div>
     </div>
 </div>

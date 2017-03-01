@@ -1,0 +1,59 @@
+<% include common/header.ejs %>
+
+<div class="container forma col-md-8 col-sm-6 col-xs-7 col-lg-8">
+    <div class="formochaZamovlennya col-md-6 col-sm-12 col-xs-12 col-lg-6">
+        <form class="">
+            <div class="form-group name-group">
+                <label for="name">Ім'я</label>
+                <input type="text" class="form-control" id="name" placeholder="Ім'я та прізвище">
+                <label class="name-help-block name ErrorInput" style="display: none">Введіть тільки власне ім'я без цифр</label>
+            </div>
+
+            <div class="form-group phone-group">
+                <label for="phoneNumber">Номер телефону</label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="+380*********">
+                <label class="name-help-block numberPhone ErrorInput" style="display: none">Введіть номер у форматі +380  або почніть з 0</label>
+            </div>
+            <div class="form-group phone-group">
+                <label for="address">Адреса</label>
+                <input type="text" class="form-control" id="address" placeholder="вул. Івана Кудрі 31-А">
+                <label class="name-help-block address" style="display: none">Введіть адресу доставки піци</label>
+            </div>
+            <!--<button type="submit" class="btn btn-default">Submit</button>-->
+        </form>
+    </div>
+    <div class="Informatiom bs-callout bs-callout-warning col-md-5 col-sm-12 col-xs-12 col-lg-4">
+        <h4>Інформація про замовлення</h4>
+        <p><b>Приблизний час доставки : </b>невідомий</p>
+        <p><b>Адреса доставки : </b>невідома</p>
+    </div>
+    <div>
+        <button class="btn buttonNext" style="width: 100%"><b>Далі</b></button>
+    </div>
+    <div class="maps">
+        <iframe class="col-md-12 maps col-sm-12 col-xs-12 col-lg-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.265999395869!2d30.535251315357502!3d50.41751547947087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf152f0773f1%3A0x8877f922d3d46878!2z0LLRg9C70LjRhtGPINCG0LLQsNC90LAg0JrRg9C00YDRliwgMzHQkCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1488300746876"  frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
+
+<div  class="col-sm-5 leftPanel col-md-4 col-xs-5">
+    <div class="zamovlennya">
+        <span class="zamovlWord">Замовлення</span>
+        <span class="amountOfPizzas counterOfZam">0</span>
+        <!--<button class="deleteZam btn btn-default">Очистити замовлення</button>-->
+    </div>
+    <div id="cart" class="overfloW ">
+
+    </div>
+
+    <div class="col-md-11 col-sm-11 sum  col-xs-11">
+        <!--<div class="sumWord">Сума замовлення:</div>-->
+        <div class="sumOfBuy">0</div>
+        <button class="buttonOrder buy none">Замовити</button>
+        <button class="buttonOrder  correct">Редагувати</button>
+    </div>
+</div>
+
+<% include common/footer.ejs %>

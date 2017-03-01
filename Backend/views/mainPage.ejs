@@ -1,0 +1,47 @@
+<% include common/header.ejs %>
+
+<div class="">
+    <div class="header">
+        <h3 class="headerAllPizzas">Усі піци</h3>
+        <span class="amountOfPizzas amOfP">0</span>
+    </div>
+
+
+    <div class=" kindOfPizza col-md-7 col-sm-6 col-xs-6">
+        <button  class="btn btn-default fontSize marg all back">Усі</button>
+        <button id="М’ясна" class="btn btn-default fontSize marg meat">М'ясні</button>
+        <button id="" class="btn btn-default fontSize marg ananas">З ананасами</button>
+        <button class="btn btn-default fontSize marg mushrooms">З грибами</button>
+        <button id="Морська піца" class="btn btn-default fontSize marg ocean">З морепродуктами</button>
+        <button id="Вега піца" class="btn btn-default fontSize marg vega">Вега</button>
+    </div>
+
+
+    <!--<div id="cart"></div>-->
+    <div class="container col-md-8 col-sm-7 col-xs-7 col-lg-8">
+        <div class="row" id="pizza_list">
+        </div>
+    </div>
+
+
+
+    <div  class="col-sm-5 leftPanel col-md-4 col-xs-5">
+        <div class="zamovlennya">
+            <span class="zamovlWord">Замовлення</span>
+            <span class="amountOfPizzas counterOfZam">0</span>
+            <button class="deleteZam btn btn-default">Очистити замовлення</button>
+        </div>
+        <div id="cart" class="overfloW ">
+
+        </div>
+
+        <div class="col-md-11 col-sm-11 sum  col-xs-11">
+            <div class="sumWord">Сума замовлення:</div>
+            <div class="sumOfBuy ">0</div>
+            <button class="buttonOrder buy">Замовити</button>
+            <button class="buttonOrder none correct">Редагувати</button>
+        </div>
+    </div>
+</div>
+
+<% include common/footer.ejs %>

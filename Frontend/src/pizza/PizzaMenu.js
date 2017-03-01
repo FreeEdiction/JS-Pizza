@@ -4,6 +4,15 @@
 var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
 var Pizza_List = require('../Pizza_List');
+var Servak = require("../API");
+
+Servak.getPizzaList(function (err, data) {
+    if (err) {
+        console.log("Houston, We've Got a Problem")
+    }
+    Pizza_List = data;
+    initialiseMenu();
+});
 
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
@@ -17,7 +26,7 @@ function showPizzaList(list) {
         var html_code = Templates.PizzaMenu_OneItem({pizza: pizza});
 
         var $node = $(html_code);
-console.log(pizza.content.pineapple);
+//console.log(pizza.content.pineapple);
         $node.find(".buy-big").click(function(){
             console.log("sdjkv");
                 PizzaCart.addToCart(pizza, PizzaCart.PizzaSize.Big);
@@ -28,7 +37,7 @@ console.log(pizza.content.pineapple);
 //console.log(pizza);
         $pizza_list.append($node);
     }
-    console.log(list.length);
+   // console.log(list.length);
     $(".amOfP").text ( parseInt(list.length));
    list.forEach(showOnePizza);
 }

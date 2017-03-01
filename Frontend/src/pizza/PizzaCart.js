@@ -10,6 +10,16 @@ var PizzaSize = {
 };
 var Storage	=	require("../storage");
 
+var Servak = require("../API");
+$(".buttonNext").click(function () {
+   Servak.createOrder(Cart,function (err,info,data) {
+    if (err) {
+        console.log("Houston, We've Got a Problem")
+    }
+        console.log("SUCCESFUL");
+   });
+
+});
 
 
 
@@ -129,7 +139,7 @@ function updateCart() {
             $(".sumOfBuy").text(parseInt($(".sumOfBuy").text()) + parseInt(cart_item.quantity)*parseInt(cart_item.pizza.big_size.price));
 
         }
-        console.log(JSON.stringify(Cart));
+       // console.log(JSON.stringify(Cart));
 //set
         Storage.set("cart",JSON.stringify(Cart));
         $cart.append($node);
@@ -143,9 +153,71 @@ function updateCart() {
 $(".deleteZam").click(function () {
     Cart= [];
     Storage.set("cart",JSON.stringify(Cart));
-    console.log(JSON.stringify(Cart));
+   // console.log(JSON.stringify(Cart));
     updateCart();
 });
+$('.buy').click(function () {
+    window.location.href = "/order.html";
+    $(".buy").addClass("none");
+    $(".correct").removeClass("none");
+
+});
+$('.correct').click(function () {
+    window.location.href = "/index.html";
+    $(".buy").removeClass("none");
+    $(".correct").addClass("none");
+});
+
+if($(".buttonNext").click(function () {
+        $(".name").hide();
+        $(".numberPhone").hide();
+        var c  = $("#name").val();
+        var x = $("#phoneNumber").val();
+        // console.log(x);
+        // console.log(c);
+        if(c.length == 0){
+            $(".name").show();
+        }
+        for(var i = 0 ; i<c.length; i++){
+            //console.log(c[i]);
+            if((c[i]<64 || (c[i]>91) && (c[i]<97) || c[i]>123) ){
+                $(".name").show();
+                i= c.length-1;
+            }
+        }
+        c= [];
+        if(x[0] === "+") {
+            $(".numberPhone").show();
+            for (var v = 1; v < x.length; v++) {
+
+                if (x[v] === "0" || x[v] === "1" || x[v] === "2" || x[v] === "3" || x[v] === "4" || x[v] === "5" ||
+                    x[v] === "6" || x[v] === "7" || x[v] === "8" || x[v] === "9") {
+                    $(".numberPhone").hide();
+                    //console.log(x);
+                    continue;
+                }
+                $(".numberPhone").show();
+                v=x.length -1;
+            }
+        }
+        if(x[0] !== "+") {
+            $(".numberPhone").show();
+            for (var v = 0; v < x.length; v++) {
+
+                if (x[v] === "0" || x[v] === "1" || x[v] === "2" || x[v] === "3" || x[v] === "4" || x[v] === "5" ||
+                    x[v] === "6" || x[v] === "7" || x[v] === "8" || x[v] === "9") {
+                    $(".numberPhone").hide();
+                    console.log(x);
+                    continue;
+                }
+                $(".numberPhone").show();
+                v= x.length-1;
+            }
+        }
+}));
+
+
+
 
 exports.removeFromCart = removeFromCart;
 exports.addToCart = addToCart;

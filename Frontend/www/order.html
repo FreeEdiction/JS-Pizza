@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Order</title>
+
+    <!-- Bootsrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- LESS основний файл -->
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
+    <!-- LESS JavaScript компілятор -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+</head>
+<body>
+<div class="upperBlackLine col-sm-6 col-md-8 col-xs-5 ">
+    <div class="badgesc">
+        <h4>Pizza</h4>
+        <h4>KMA</h4>
+    </div>
+    <div class="upperLine">
+        <div class="firstLine">
+            <div class="fontSize numbers">8(800)-555-35-35</div>
+            <div class="hours fontSize">24 години/7днів на тиждень</div>
+            <div class="freeDostavka fontSize">Безкошовна доставка піци</div>
+            <button class="log btn btn-primary ">Ввійти</button>
+            <div></div>
+        </div>
+        <div class="fontSize">Pizza</div>
+
+    </div>
+
+</div>
+
+<img src="assets/images/Rectangle%2076.png" class="rectIMG">
+
+
+
+<div class="container forma col-md-8 col-sm-6 col-xs-7 col-lg-8">
+<div class="formochaZamovlennya col-md-6 col-sm-12 col-xs-12 col-lg-6">
+<form class="">
+    <div class="form-group name-group">
+        <label for="name">Ім'я</label>
+        <input type="text" class="form-control" id="name" placeholder="Ім'я та прізвище">
+        <label class="name-help-block name ErrorInput" style="display: none">Введіть тільки власне ім'я без цифр</label>
+    </div>
+
+    <div class="form-group phone-group">
+        <label for="phoneNumber">Номер телефону</label>
+        <input type="text" class="form-control" id="phoneNumber" placeholder="+380*********">
+        <label class="name-help-block numberPhone ErrorInput" style="display: none">Введіть номер у форматі +380  або почніть з 0</label>
+    </div>
+    <div class="form-group phone-group">
+        <label for="address">Адреса</label>
+        <input type="text" class="form-control" id="address" placeholder="вул. Івана Кудрі 31-А">
+        <label class="name-help-block address" style="display: none">Введіть адресу доставки піци</label>
+    </div>
+    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+</form>
+</div>
+    <div class="Informatiom bs-callout bs-callout-warning col-md-5 col-sm-12 col-xs-12 col-lg-4">
+<h4>Інформація про замовлення</h4>
+        <p><b>Приблизний час доставки : </b>невідомий</p>
+        <p><b>Адреса доставки : </b>невідома</p>
+    </div>
+<div>
+    <button class="btn buttonNext" style="width: 100%"><b>Далі</b></button>
+</div>
+    <div class="maps">
+        <iframe class="col-md-12 maps col-sm-12 col-xs-12 col-lg-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.265999395869!2d30.535251315357502!3d50.41751547947087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf152f0773f1%3A0x8877f922d3d46878!2z0LLRg9C70LjRhtGPINCG0LLQsNC90LAg0JrRg9C00YDRliwgMzHQkCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1488300746876"  frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
+
+<div  class="col-sm-5 leftPanel col-md-4 col-xs-5">
+    <div class="zamovlennya">
+        <span class="zamovlWord">Замовлення</span>
+        <span class="amountOfPizzas counterOfZam">0</span>
+        <!--<button class="deleteZam btn btn-default">Очистити замовлення</button>-->
+    </div>
+    <div id="cart" class="overfloW ">
+
+    </div>
+
+    <div class="col-md-11 col-sm-11 sum  col-xs-11">
+        <!--<div class="sumWord">Сума замовлення:</div>-->
+        <div class="sumOfBuy">0</div>
+        <button class="buttonOrder buy none">Замовити</button>
+        <button class="buttonOrder  correct">Редагувати</button>
+    </div>
+</div>
+
+<div class="bottomBadge">
+    <div class="fontSize1">Цього тижня</div>
+    <div class="fontSize1">НА ВСЕ</div>
+    <div>------------</div>
+    <div class="fontSize1">-20%</div>
+</div>
+<div class="bottomPanel col-md-8 col-sm-7 col-xs-6">
+    <div class="fontSize">Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській Академії</div>
+    <div class="fontSize">Доставка піци не здійснюється</div>
+</div>
+<img src="assets/images/rex.png" class="rectIM">
+<!-- jQuery JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+
+<!--Bootsrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--Own JavaScript -->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
+</body>
+</html>
