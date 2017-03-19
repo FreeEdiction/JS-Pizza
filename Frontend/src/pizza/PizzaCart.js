@@ -12,13 +12,34 @@ var Storage	=	require("../storage");
 
 var Servak = require("../API");
 $(".buttonNext").click(function () {
-   Servak.createOrder(Cart,function (err,info,data) {
-    if (err) {
-        console.log("Houston, We've Got a Problem")
+    var ORDER = {
+        name: $("#name").val(),
+        number:$("#phoneNumber").val(),
+        address: $(".address2").text(),
+        cost: $(".sumOfBuy").text(),
+        order: Cart
     }
-        console.log("SUCCESFUL");
-   });
-
+        Servak.createOrder(ORDER, function (err, info) {
+            if (err) {
+                console.log("Houston, We've Got a Problem")
+            }
+            console.log("SUCCESFUL");
+            console.log(JSON.stringify(info));
+            console.log(ORDER);
+            LiqPayCheckout.init({
+                data:	info.data,
+                signature:	info.signature,
+                embedTo:	"#liqpay",
+                mode:	"popup"	//	embed	||	popup
+            }).on("liqpay.callback",	function(data){
+                console.log(data.status);
+                console.log(data);
+            }).on("liqpay.ready",	function(data){
+//	ready
+            }).on("liqpay.close",	function(data){
+//	close
+            });
+        });
 });
 
 
@@ -207,7 +228,7 @@ if($(".buttonNext").click(function () {
                 if (x[v] === "0" || x[v] === "1" || x[v] === "2" || x[v] === "3" || x[v] === "4" || x[v] === "5" ||
                     x[v] === "6" || x[v] === "7" || x[v] === "8" || x[v] === "9") {
                     $(".numberPhone").hide();
-                    console.log(x);
+                   // console.log(x);
                     continue;
                 }
                 $(".numberPhone").show();
@@ -215,6 +236,151 @@ if($(".buttonNext").click(function () {
             }
         }
 }));
+
+
+function	initialize()	{
+//Тут починаємо працювати з картою
+    var mapProp =	{
+        center:	new	google.maps.LatLng(50.464379,30.519131),
+        zoom:	14
+    };
+    var html_element =	document.getElementById("googleMap");
+    var map	=	new	google.maps.Map(html_element,	 mapProp);
+//Карта створена і показана
+    var point	=	new	google.maps.LatLng(50.464379,30.519131);
+    var marker	=	new	google.maps.Marker({
+        position:	point,
+//map	- це змінна карти створена за допомогою new google.maps.Map(...)
+    map:	map,
+        icon:	"assets/images/map-icon.png"
+});
+   // var marker1 = null;
+
+    $("#address").keypress(function(){
+            var coordinates;
+
+            var addr = $("#address").val();
+            $(".address2").text(addr);
+            geocodeAddress(addr, function(err,Coordinates){
+                // if(marker1!= null){
+                //     marker1 = null;
+                // }
+                if(!err){
+                    coordinates = Coordinates;
+
+                    console.log(coordinates);
+
+                    //  marker1 = new google.maps.Marker({
+                    //     position: coordinates,
+                    //     animation: google.maps.Animation.DROP,
+                    //     map: map,
+                    //     icon: "assets/images/home-icon.png"
+                    // });
+                    geocodeLatLng(coordinates, function(err, adress){
+                        if(!err) {
+                            console.log(addr);
+                            $(".address2").text(adress);
+                        }else{
+                            console.log("Адресу невизначено");
+                        }
+                    });
+                    calculateRoute(point,  coordinates, function(err, time){
+                        if(!err){
+                            $(".time").text(time.duration.text);
+                        }else{
+                            console.log("Шляху немає");
+                        }
+                    });
+                }
+            });
+    });
+
+
+
+    google.maps.event.addListener(map,
+        'click',function(me){
+            var coordinates	=	me.latLng;
+            // if(marker1!= null){
+            //     marker1 = null;
+            // }
+            geocodeLatLng(coordinates,	function(err,	adress){
+
+                if(!err)	{
+//Дізналися адресу
+//                      marker1 = new google.maps.Marker({
+//                         position: coordinates,
+//                         animation: google.maps.Animation.DROP,
+//                         map: map,
+//                         icon: "assets/images/home-icon.png"
+//                     });
+                    console.log(adress);
+                    $(".address2").text(adress);
+                    $("#address").val(adress);
+
+                    calculateRoute(point,	 coordinates,	function(err,	route){
+                        if(!err)	{
+//Дізналися адресу
+
+                            console.log(route);
+                            $(".time").text(route.duration.text);
+                        }	else	{
+                            console.log("Немає routa")
+                        }
+                    })
+                }	else	{
+                    console.log("Немає адреси")
+                }
+            })
+        });
+
+
+}
+function	geocodeLatLng(latlng,	 callback){
+//Модуль за роботу з адресою
+    var geocoder	=	new	google.maps.Geocoder();
+    geocoder.geocode({'location':	latlng},	function(results,	status)	{
+        if	(status	===	google.maps.GeocoderStatus.OK&&	results[1])	{
+            var adress =	results[1].formatted_address;
+            callback(null,	adress);
+            console.log(adress);
+        }	else	{
+            callback(new	Error("Can't	find	adress"));
+        }
+    });
+}
+function geocodeAddress(address, callback) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK&& results[0]) {
+            var coordinates = results[0].geometry.location;
+            callback(null, coordinates);
+        } else {
+            callback(new Error("Can not find the adress"));
+        }
+    });
+}
+
+function	calculateRoute(A_latlng,	 B_latlng,	callback)	{
+    var directionService =	new	google.maps.DirectionsService();
+    directionService.route({
+        origin:	A_latlng,
+        destination:	B_latlng,
+        travelMode:	google.maps.TravelMode["DRIVING"]
+    },	function(response,	status)	{
+        if	(	status	==	google.maps.DirectionsStatus.OK )	{
+            var leg	=	response.routes[	0	].legs[	0	];
+            callback(null,	{
+                duration:	leg.duration
+            });
+        }	else	{
+            callback(new	Error("Can'	not	find	direction"));
+        }
+    });
+}
+
+//Коли сторінка завантажилась
+google.maps.event.addDomListener(window,	 'load',	initialize);
+
 
 
 

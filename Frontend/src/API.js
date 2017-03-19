@@ -9,7 +9,7 @@ function backendGet(url, callback) {
         type: 'GET',
         success: function(data){
             callback(null, data);
-            console.log(data+"ksvhbhsgdfgdshgfhdsgfh");
+           // console.log(data+"ksvhbhsgdfgdshgfhdsgfh");
         },
         error: function() {
             callback(new Error("Ajax Failed"));
